@@ -1,5 +1,28 @@
 export default function findFriendByName(name, friends) {
     // iterate through the friends
-    
-    // when you find a friend with the correct name, return that friend
-}
+    const friendsArray = [
+        {
+            name: 'Erich',
+            satisfaction: 2
+        },
+        {
+            name: 'Sarah',
+            satisfaction: 3
+        },
+        {
+            name: 'Missael',
+            satisfaction: 1
+        },
+        {
+            name: 'Soraya',
+            satisfaction: 2
+        }];
+
+    // when you find a friend
+    function findByName(name, friendsArray) {
+        for (let item of friendsArray) {
+            if (item.name === name) {
+                return item;
+            }
+        }
+    }}

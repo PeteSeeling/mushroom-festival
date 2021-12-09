@@ -147,6 +147,10 @@ footer {
     display: flex;
     flex-wrap: wrap-reverse;
     justify-content: flex-end;
+    height:50%;
+    flex-direction: column;
+    margin-bottom:30%;
+    font-size:1.2rem;
 }
 
 .friend {
@@ -163,7 +167,7 @@ footer {
 }
 
 .friend .name {
-    font-size: 1.3rem;
+    font-size: 3rem;
 }
 
 .friend .emoji {
@@ -202,4 +206,10 @@ footer {
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url('../assets/porcini.png')
+}
+.outer-div{
+    display:flex;
+    flex-direction: column;
+    font-size:2rem;
+    
 }

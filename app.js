@@ -100,6 +100,6 @@ function displayMushrooms() {
 
     }
 }
-
+console.log(friendData)
 displayFriends();
 displayMushrooms();

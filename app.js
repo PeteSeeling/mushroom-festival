@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
 import { renderMushroom, renderFriend } from './render-utils.js';
-import findFriendByName from './data-utils.js';
+import { findFriendByName } from './data-utils.js';
 
 const friendsEl = document.querySelector('.friends');
 const friendInputEl = document.getElementById('friend-input');
@@ -66,15 +66,29 @@ addMushroomButton.addEventListener('click', () => {
 
 
 function displayFriends() {
-    // clear out the friends in DOM
     friendsEl.textContent = '';
-  
-    
-    // for each friend in state . . .
+
     for (let friend of friendData) {
         const friendEl = renderFriend(friend);
 
-        // this is a clickable list, so . . 
+        friendEl.addEventListener('click', () => {
+            const friendInState = findFriendByName(friend.name, friendData);
+    
+            if (mushroomCount === 0) {
+                alert('no mushrooms left! go forage for some more');
+            }
+            if (mushroomCount > 0 && friendInState.satisfaction < 3) {
+                friendInState.satisfaction++;
+                mushroomCount--;
+        
+                displayFriends();
+                displayMushrooms();    
+            }
+        });
+
+        friendsEl.append(friendEl);
+    }
+}
         //     add an event listener to each friend
         //         on click, go find the clicked friend in state
         
@@ -84,9 +98,9 @@ function displayFriends() {
         //             then display your friends and mushrooms with the updated state
     
         // append the friendEl to the friends list in DOM
-    }
     
-}
+    
+
 
 
 function displayMushrooms() { 
@@ -100,6 +114,6 @@ function displayMushrooms() {
 
     }
 }
-console.log(friendData)
+console.log(friendData);
 displayFriends();
 displayMushrooms();

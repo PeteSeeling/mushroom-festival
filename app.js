@@ -30,7 +30,6 @@ const friendData = [
     },
 ];
 
-
 addFriendButton.addEventListener('click', () => {
     
     const name = document.getElementById('friend-input').value;
@@ -46,7 +45,6 @@ addFriendButton.addEventListener('click', () => {
     displayFriends();
 });
 
-
 addMushroomButton.addEventListener('click', () => {
     if (Math.random() > .5) {
         alert('found a mushroom!');
@@ -57,7 +55,6 @@ addMushroomButton.addEventListener('click', () => {
         alert('no luck!');
     }
 });
-
 
 function displayFriends() {
     friendsEl.textContent = '';

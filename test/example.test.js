@@ -7,12 +7,12 @@ const test = QUnit.test;
 test('time to test a function', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = ('div');
+    const expected = (true);
     
     //Act 
     // Call the function you're testing and set the result to a const
-    renderMushroom();
-    const actual = ('div');
+   
+    const actual = renderMushroom('mushroom');
 
     //Expect
     // Make assertions about what is expected versus the actual result
